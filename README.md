@@ -33,4 +33,10 @@ if __name__ == '__main__':
     model_twitter = dl.load("glove-twitter-200")
 ```
 
-Finally, we can overview the main functions that are used for printing and plotting our results.
+Finally, let's overview the main functions that are used for printing and plotting our results.
+- Generating lists of the most similar words: for this part use `def q1(model)`
+- Polysemous words: for this part use `def q2(model)` and `def q2_1(model)`
+- Synonyms and Antonyms: for this part use `def q3(model)`
+- The Effect of Different Corpora: for this part use `def q4(model_wiki, model_twitter)`
+- Plotting words in 2D: for this part use `def q5(model)`
+- Mean Average Precision (MAP) evaluation: for this part use `def q9()`

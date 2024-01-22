@@ -77,7 +77,7 @@ def q5(model):
     plt.show()
 
 
-def q7():
+def q9():
     semantic_juddgements_chat_gpt_cat = ([1] * 16) + ([0] * 4)
     semantic_juddgements_chat_gpt_pen = [1, 1, 1, 1, 1, 1, 1, 1, 1, 0,  # 'penmanship'
                                          1, 1, 1, 1, 0, 0, 1, 1, 1, 1]
