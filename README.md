@@ -41,4 +41,4 @@ Finally, let's overview the main functions that are used for printing and plotti
 - Synonyms and Antonyms: for this part use `def q3(model)`
 - The Effect of Different Corpora: for this part use `def q4(model_wiki, model_twitter)`
 - Plotting words in 2D: for this part use `def q5(model)`
-- Mean Average Precision (MAP) evaluation: for this part use `def q9()`
+- Mean Average Precision (MAP) evaluation: for this part use `def q7()`
