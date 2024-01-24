@@ -70,7 +70,7 @@ def get_words(words, judgment):
 
     :param words: list of words
     :param judgment: list of 0's and 1's where 1 means relevant and 0 means not relevant
-    :return: the list of words that are relevant according to the judgment
+    :return: the list of words that are relevant according to the judgment list
     """
     lst = []
     for i, w in enumerate(words):
@@ -78,14 +78,5 @@ def get_words(words, judgment):
             lst.append(w)
     return lst
 
-
-# if __name__ == '__main__':
-# model = dl.load("word2vec-google-news-300")
-# # this will take a while on first load as it downloads a 1.6G file.
-# # later calls will be cached.
-# # You can now use various methods of the “model“ object.
-# # you can access the vocabulary like so:
-# vocab = model.index_to_key
-# polysemous_words()
 
 

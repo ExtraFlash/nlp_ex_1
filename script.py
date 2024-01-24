@@ -40,16 +40,11 @@ def q4(model_wiki, model_twitter):
 
 
 def q5(model):
-    # get the 5000 most frequent words
     vocab5k = model.index_to_key[1:5000]
-    # the list of the embedding of each word
     list_embed = []
-    # the list of the words
     id2word = []
-    # list of 1's and 0's where 1 means the word ends with "ing" and 0 means the word ends with "ed"
     is_ing_list = []
 
-    # go over the 5000 most frequent words and add the embedding of the words that end with "ing" or "ed"
     for word in vocab5k:
         if word.endswith("ing") or word.endswith("ed"):
             list_embed.append(model[word])
@@ -59,25 +54,23 @@ def q5(model):
             else:
                 is_ing_list.append(0)
 
-    # convert the lists to numpy arrays
     list_embed = np.array(list_embed)
     is_ing_list = np.array(is_ing_list)
 
-    # reduce the dimension of the embeddings to 2
     pca = decomposition.PCA(n_components=2)
     pca.fit(list_embed)  # use a set of vectors to learn the PCA transformation
     Z = pca.transform(list_embed)  # transform a set of vectors to reduce their dim
-
-    # plot the embeddings
+    # (it is possible that Z=X)
     Z_ing = Z[is_ing_list == 1]
     Z_ed = Z[is_ing_list == 0]
+
     plt.scatter(Z_ing[:, 0], Z_ing[:, 1], c="b", label='ing')
     plt.scatter(Z_ed[:, 0], Z_ed[:, 1], c="g", label='ed')
     plt.legend()
     plt.show()
 
 
-def q9():
+def q7():
     semantic_juddgements_chat_gpt_cat = ([1] * 16) + ([0] * 4)
     semantic_juddgements_chat_gpt_pen = [1, 1, 1, 1, 1, 1, 1, 1, 1, 0,  # 'penmanship'
                                          1, 1, 1, 1, 0, 0, 1, 1, 1, 1]
@@ -189,8 +182,15 @@ def q9():
     print(utils.get_words(word2vec_pen, topic_juddgements_word2vec_pen))
 
 
-# if __name__ == '__main__':
-#     model = dl.load("word2vec-google-news-300")
-#     model_wiki = dl.load("glove-wiki-gigaword-200")
-#     model_twitter = dl.load("glove-twitter-200")
+if __name__ == '__main__':
+    model = dl.load("word2vec-google-news-300")
+    model_wiki = dl.load("glove-wiki-gigaword-200")
+    model_twitter = dl.load("glove-twitter-200")
+
+    q1(model)
+    q2(model)
+    q2_1(model)
+    q3(model)
+    q4(model_wiki, model_twitter)
+    q5(model)
     q7()

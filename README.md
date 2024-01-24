@@ -1,6 +1,8 @@
 
 # NLP assignment 1
 
+#### Authors: Nadav Cohen 209356526, Or Shkuri 322549114
+
 Our project contains two main files: `utils.py` and `script.py`.
 
 - `utils.py` contains all the utility functions:
@@ -12,7 +14,7 @@ This file contains five utility functions:
 - `polysemous_words(model, first_group, second_group)`: prints the 10 most similar words for each word in the first group and the second group
 - `sim_models(modelA, modelB, word)`: returns the amount of words that are in the top 10 most similar words in both models divided by the amount of words.
 - `ap(judged)`: returns the ap value according the the judged list
-- `get_words(words, judgment)`: returns the list of words that are relevant according to the judgment
+- `get_words(words, judgment)`: returns the list of words that are relevant according to the judgment list
 
 ## script.py
 This is the main file in our project.
